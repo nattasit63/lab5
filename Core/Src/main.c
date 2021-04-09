@@ -376,10 +376,8 @@ void encoderSpeedReaderCycle(){
 			{
 				difftime[i]+=4294967295;
 			}
-			sum = difftime[0]+difftime[1]+difftime[2]+difftime[3]+difftime[4]+difftime[5]+difftime[6]+difftime[7]+difftime[8]+difftime[9]+difftime[10]+difftime[11]+difftime[12]+difftime[13]+difftime[14]+difftime[15]+difftime[16]+difftime[17]+difftime[18]+difftime[19]+difftime[20]+difftime[21]+difftime[22]+difftime[23]+difftime[24]+difftime[25]+difftime[26]+difftime[27]+difftime[28]+difftime[29]+difftime[30];
-//			meantime = (float)(sum/31);
-//			rpm = (float)(1/(64*meantime*0.000001/5));
-
+			//sum = difftime[0]+difftime[1]+difftime[2]+difftime[3]+difftime[4]+difftime[5]+difftime[6]+difftime[7]+difftime[8]+difftime[9]+difftime[10]+difftime[11]+difftime[12]+difftime[13]+difftime[14]+difftime[15]+difftime[16]+difftime[17]+difftime[18]+difftime[19]+difftime[20]+difftime[21]+difftime[22]+difftime[23]+difftime[24]+difftime[25]+difftime[26]+difftime[27]+difftime[28]+difftime[29]+difftime[30];
+			sum +=difftime[i];
 		}
 	meantime =sum /31;
 	rpm = 5.00*1000000.00/(meantime*64.0);
