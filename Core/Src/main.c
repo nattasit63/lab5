@@ -54,7 +54,7 @@ uint64_t _micros =0;
 int64_t difftime[capturenum-1] = { 0 };
 double meantime =0;
 double rpm=0;
-float rpm1=0;
+//float rpm1=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -376,11 +376,10 @@ void encoderSpeedReaderCycle(){
 			{
 				difftime[i]+=4294967295;
 			}
-			//sum = difftime[0]+difftime[1]+difftime[2]+difftime[3]+difftime[4]+difftime[5]+difftime[6]+difftime[7]+difftime[8]+difftime[9]+difftime[10]+difftime[11]+difftime[12]+difftime[13]+difftime[14]+difftime[15]+difftime[16]+difftime[17]+difftime[18]+difftime[19]+difftime[20]+difftime[21]+difftime[22]+difftime[23]+difftime[24]+difftime[25]+difftime[26]+difftime[27]+difftime[28]+difftime[29]+difftime[30];
 			sum +=difftime[i];
 		}
 	meantime =sum /31;
-	rpm = 5.00*1000000.00/(meantime*64.0);
+	rpm = 5*1000000/(meantime*64);
 }
 uint64_t micros(){
 	return _micros + htim5.Instance->CNT;
